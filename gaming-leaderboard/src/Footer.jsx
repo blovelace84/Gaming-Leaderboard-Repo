@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer  = () => {
     return(
-        <footer>
+        <footer className="footer">
             <p>&copy; 2025 Gaming Leaderboard. All rights reseverd to Brittani Lovelace</p>
         </footer>
     );

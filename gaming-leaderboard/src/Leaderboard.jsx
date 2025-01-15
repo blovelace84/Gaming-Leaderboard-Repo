@@ -1,23 +1,24 @@
 import React from "react";
+import './Leaderboard.css';
 
 const Leaderboard = ({ players }) => {
     return (
-      <div className="p-4">
-        <h2 className="text-xl font-bold mb-4">Leaderboard</h2>
-        <table className="table-auto w-full text-left border-collapse">
+        <div className="leaderboard-container">
+        <h2 className="leaderboard-title">Leaderboard</h2>
+        <table className="leaderboard-table">
           <thead>
-            <tr className="bg-gray-200">
-              <th className="p-2">Rank</th>
-              <th className="p-2">Player</th>
-              <th className="p-2">Score</th>
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Score</th>
             </tr>
           </thead>
           <tbody>
             {players.map((player, index) => (
-              <tr key={player.id} className="border-b">
-                <td className="p-2">{index + 1}</td>
-                <td className="p-2">{player.name}</td>
-                <td className="p-2">{player.score}</td>
+              <tr key={player.id}>
+                <td>{index + 1}</td>
+                <td>{player.name}</td>
+                <td>{player.score}</td>
               </tr>
             ))}
           </tbody>
