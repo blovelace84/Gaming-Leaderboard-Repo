@@ -10,15 +10,21 @@ const Search = ({onSearch}) => {
         onSearch(value); //Notify parent about the search query
     };
 
+    
+
     return(
         <div className="search-container">
             <input 
                 type="text"
                 value={query}
                 onChange={handleSearch}
+               
                 className="search-input"
                 placeholder="Search players by name..."
                 />
+            <button className="search-button" onClick={handleSearch}>
+                Search Player
+            </button>
         </div>
     );
 }

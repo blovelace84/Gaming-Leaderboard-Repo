@@ -4,6 +4,27 @@ import { useState } from "react";
 import "./PlayerInputForm.css";
 
 const PlayerInputForm = ({addPlayer}) => {
+  const [name, setName] = useState("");
+  const [score, setScore] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(!name.trim() || !score.trim()){
+      alert("Please enter a valid name and score.");
+      return;
+    }
+
+    const newPlayer = {
+      name: name.trim(),
+      score: parseInt(score, 10),
+    }
+    addPlayer(newPlayer); //Call the function passed down as a prop
+
+    //clear the form
+    setName("");
+    setScore("");
+  };
   //Validation schema for yup
   const validationSchema = Yup.object({
     name: Yup.string()
