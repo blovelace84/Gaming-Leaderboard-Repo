@@ -13,19 +13,18 @@ const Search = ({onSearch}) => {
     
 
     return(
-        <div className="search-container">
-            <input 
-                type="text"
-                value={query}
-                onChange={handleSearch}
-               
-                className="search-input"
-                placeholder="Search players by name..."
-                />
-            <button className="search-button" onClick={handleSearch}>
-                Search Player
-            </button>
-        </div>
+        <form onSubmit={handleSearch} className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by name"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="search-input"
+        />
+        <button type="submit" className="search-button">
+          Search
+        </button>
+      </form>
     );
 }
 

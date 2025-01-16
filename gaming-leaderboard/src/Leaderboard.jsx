@@ -11,10 +11,10 @@ const Leaderboard = () => {
   };
 
   return (
-    <div>
-      <h1>Leaderboard</h1>
+    <div className="leaderboard-container">
+      <h1 leaderboard-title>Leaderboard</h1>
       <PlayerInputForm addPlayer={addPlayer}/>
-      <table border="1" style={{ width: "100%", textAlign: "left" }}>
+      <table className="leaderboard-table" border="1" style={{ width: "100%", textAlign: "left" }}>
         <thead>
           <tr>
             <th>#</th>
@@ -25,7 +25,7 @@ const Leaderboard = () => {
         <tbody>
           {players.length > 0 ? (
             players.map((player, index) => (
-              <tr key={index}>
+              <tr key={index} className="leaderboard-row">
                 <td>{index + 1}</td>
                 <td>{player.name}</td>
                 <td>{player.score}</td>
@@ -33,7 +33,7 @@ const Leaderboard = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="3" style={{ textAlign: "center" }}>
+              <td className="no-players" colSpan="3" style={{ textAlign: "center" }}>
                 No players added yet.
               </td>
             </tr>

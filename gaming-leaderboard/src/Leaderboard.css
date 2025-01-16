@@ -1,0 +1,70 @@
+/* Leaderboard container */
+.leaderboard-container {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.leaderboard-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table styling */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Header row styling */
+.leaderboard-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Row styling */
+.leaderboard-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.leaderboard-row:hover {
+  background-color: #eaf4fc;
+}
+
+/* No players message */
+.no-players {
+  text-align: center;
+  font-size: 1rem;
+  color: #777;
+  padding: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .leaderboard-table th,
+  .leaderboard-table td {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  .leaderboard-title {
+    font-size: 1.5rem;
+  }
+}
