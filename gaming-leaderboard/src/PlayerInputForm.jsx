@@ -7,8 +7,10 @@ export default function PlayerInputForm({ addPlayer }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //only add the player if both fields are filled
     if (name && score) {
-      addPlayer({ name, score: Number(score) });
+      addPlayer({ id: Date.now(), name, score: Number(score) });
       setName("");
       setScore("");
     }

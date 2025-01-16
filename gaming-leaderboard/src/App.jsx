@@ -8,18 +8,15 @@ import Search from "./Search";
 const App = () => {
     const [players, setPlayers] = useState([]);
 
-    const addPlayer = (player) => {
-        setPlayers((prev) => [...prev, player]);
+    const addPlayer = (newPlayer) => {
+        setPlayers((prev) => [...prev, newPlayer]);
     };
 
     return(
         <div>
             <Header />
-            <main>
-                <Search />
-                <PlayerInputForm addPlayer={addPlayer}/>
-            </main>
-            <Footer />
+            <PlayerInputForm addPlayer={addPlayer}/>
+            <Leaderboard players={players} />
         </div>
     );
 }
