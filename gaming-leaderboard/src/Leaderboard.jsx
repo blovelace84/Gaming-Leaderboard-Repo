@@ -10,9 +10,13 @@ const Leaderboard = () => {
     setPlayers((prevPlayers) => [...prevPlayers, newPlayer]);
   };
 
+  const clearPlayers = () => {
+    setPlayers([]);
+  };
+
   return (
     <div className="leaderboard-container">
-      <h1 leaderboard-title>Leaderboard</h1>
+      <h1 className="leader-board-title">Leaderboard</h1>
       <PlayerInputForm addPlayer={addPlayer}/>
       <table className="leaderboard-table" border="1" style={{ width: "100%", textAlign: "left" }}>
         <thead>
@@ -40,6 +44,13 @@ const Leaderboard = () => {
           )}
         </tbody>
       </table>
+      <div className="leaderboard-buttons">
+      <button className="clear-button"
+              onClick={clearPlayers}
+              disabled={players.length === 0}>
+                Clear Leaderboard
+      </button>
+      </div>
     </div>
   );
 }

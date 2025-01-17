@@ -56,6 +56,32 @@
   padding: 20px;
 }
 
+.leaderboard-buttons{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.clear-button{
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: navy;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button:hover{
+  background-color: green;
+}
+
+.clear-button:disabled{
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 600px) {
   .leaderboard-table th,
