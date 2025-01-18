@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './Leaderboard.css';
+import { supabase } from "./supabaseClient";
 import PlayerInputForm from "./PlayerInputForm";
 
 const Leaderboard = () => {
   const [players, setPlayers] = useState([]);
+
+  const fetchPlayers = async () => {
+    const { data, error } = await supabase
+      .from("players")
+      .select("*")
+      .order("score", { ascending: false });
+
+      if(error) {
+        console.error("Error fetching players:", error);
+      }else{
+        setPlayers(data)
+      }
+  };
+
+  useEffect(() => {
+    fetchPlayers();
+  }, []);
 
   // Function to add a new player
   const addPlayer = (newPlayer) => {
@@ -17,7 +35,7 @@ const Leaderboard = () => {
   return (
     <div className="leaderboard-container">
       <h1 className="leader-board-title">Leaderboard</h1>
-      <PlayerInputForm addPlayer={addPlayer}/>
+      
       <table className="leaderboard-table" border="1" style={{ width: "100%", textAlign: "left" }}>
         <thead>
           <tr>
